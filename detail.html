@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>앱 상세 · deepsolve</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .back { display: inline-block; margin-bottom: 16px; color: var(--muted); text-decoration: none; font-size: 14px; }
+    .back:hover { color: var(--text); }
+    .detail { display: grid; grid-template-columns: 1fr 320px; gap: 24px; align-items: start; }
+    .detail .thumb { border-radius: var(--radius); font-size: 80px; }
+    .description { white-space: pre-line; margin-top: 20px; }
+    .side { position: sticky; top: 84px; display: grid; gap: 12px; }
+    .side h1 { font-size: 24px; letter-spacing: -0.01em; }
+    .side .price { font-size: 26px; }
+    .info { display: grid; gap: 6px; font-size: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
+    .info div { display: flex; justify-content: space-between; gap: 12px; }
+    .owned { background: var(--primary-soft); border-radius: var(--radius-sm); padding: 12px; font-size: 14px; display: grid; gap: 8px; }
+    .owned code { font-size: 12px; overflow-wrap: anywhere; color: var(--muted); }
+
+    /* 미리 써보기 */
+    .preview { margin-top: 24px; }
+    .preview-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; gap: 12px; }
+    .preview-frame { position: relative; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--surface-2); }
+    .preview-frame iframe { display: block; width: 100%; height: 520px; border: 0; background: #fff; }
+    .countdown { font-weight: 700; color: var(--primary); font-variant-numeric: tabular-nums; }
+    .countdown.warn { color: var(--danger); }
+    .preview-cover {
+      position: absolute; inset: 0; display: grid; place-items: center; text-align: center;
+      background: color-mix(in srgb, var(--surface) 92%, transparent); padding: 24px;
+    }
+    .preview-cover > div { display: grid; gap: 12px; justify-items: center; }
+    .preview-start { height: 220px; display: grid; place-items: center; }
+
+    @media (max-width: 800px) {
+      .detail { grid-template-columns: 1fr; }
+      .side { position: static; order: -1; }
+      .preview-frame iframe { height: 440px; }
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <a class="back" href="index.html">← 마켓으로</a>
+    <div id="detail-root"></div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/detail.js"></script>
+</body>
+</html>

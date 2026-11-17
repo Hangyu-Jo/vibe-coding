@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>로그인 · deepsolve</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .auth { max-width: 420px; margin: 24px auto 0; }
+    .auth h1 { font-size: 24px; margin-bottom: 4px; }
+    .bonus { background: var(--primary-soft); color: var(--primary); border-radius: var(--radius-sm); padding: 10px 12px; font-size: 14px; font-weight: 600; }
+    .demo-warning { font-size: 13px; margin-top: 16px; }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <div class="auth panel">
+      <div class="tabs" role="tablist">
+        <button class="tab active" type="button" data-tab="login">로그인</button>
+        <button class="tab" type="button" data-tab="signup">회원가입</button>
+      </div>
+
+      <!-- 로그인 폼 -->
+      <form class="form" id="login-form" novalidate>
+        <h1>다시 오셨네요 👋</h1>
+        <div class="field">
+          <label for="login-email">이메일</label>
+          <input class="input" id="login-email" type="email" autocomplete="username" required>
+        </div>
+        <div class="field">
+          <label for="login-password">비밀번호</label>
+          <input class="input" id="login-password" type="password" autocomplete="current-password" required>
+        </div>
+        <p class="form-error" id="login-error"></p>
+        <button class="btn btn-primary btn-block" type="submit">로그인</button>
+      </form>
+
+      <!-- 회원가입 폼 -->
+      <form class="form hidden" id="signup-form" novalidate>
+        <h1>deepsolve 시작하기</h1>
+        <p class="bonus">🎁 가입하면 1,000P를 드려요</p>
+        <div class="field">
+          <label for="signup-name">이름</label>
+          <input class="input" id="signup-name" type="text" maxlength="20" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="signup-email">이메일</label>
+          <input class="input" id="signup-email" type="email" autocomplete="username" required>
+        </div>
+        <div class="field">
+          <label for="signup-password">비밀번호</label>
+          <input class="input" id="signup-password" type="password" autocomplete="new-password" minlength="4" required>
+          <span class="hint">4자 이상</span>
+        </div>
+        <p class="form-error" id="signup-error"></p>
+        <button class="btn btn-primary btn-block" type="submit">가입하고 1,000P 받기</button>
+      </form>
+
+      <p class="demo-warning muted">
+        ⚠️ 데모 버전이라 비밀번호가 이 브라우저에 그대로 저장돼요. 실제로 쓰는 비밀번호는 넣지 마세요.
+      </p>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
