@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>마이페이지 · deepsolve</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .profile { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .profile h1 { font-size: 24px; }
+    .stat { text-align: right; }
+    .stat strong { display: block; font-size: 28px; color: var(--primary); }
+    .list { display: grid; gap: 12px; }
+    .item { display: flex; align-items: center; gap: 16px; padding: 12px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+    .item .thumb { width: 96px; flex-shrink: 0; border-radius: var(--radius-sm); font-size: 32px; }
+    .item-body { flex: 1; min-width: 0; }
+    .item-body a { text-decoration: none; font-weight: 700; }
+    .item-body p { font-size: 13px; }
+    .item-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+    .reset { margin-top: 40px; text-align: center; font-size: 13px; }
+    @media (max-width: 560px) {
+      .item { flex-wrap: wrap; }
+      .item-actions { width: 100%; justify-content: stretch; }
+      .item-actions .btn { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <section class="profile panel">
+      <div>
+        <h1 id="user-name"></h1>
+        <p class="muted" id="user-email"></p>
+      </div>
+      <div class="stat">
+        <span class="muted">보유 포인트</span>
+        <strong id="user-points"></strong>
+      </div>
+    </section>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" type="button" data-tab="purchased">구매한 앱</button>
+      <button class="tab" type="button" data-tab="selling">내가 등록한 앱</button>
+    </div>
+    <div class="list" id="list"></div>
+
+    <p class="reset muted">
+      데모 데이터를 처음 상태로 되돌리고 싶다면
+      <button class="btn-link" id="reset-btn" type="button">데모 초기화</button>
+    </p>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/mypage.js"></script>
+</body>
+</html>

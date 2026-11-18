@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>앱 등록하기 · deepsolve</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .sell { max-width: 640px; margin: 0 auto; }
+    .sell h1 { font-size: 26px; }
+    .sell > p { margin: 4px 0 24px; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main class="container">
+    <div class="sell">
+      <h1>앱 등록하기</h1>
+      <p class="muted">바이브 코딩으로 만든 웹앱을 등록하고 포인트로 판매하세요.</p>
+
+      <form class="form panel" id="sell-form" novalidate>
+        <div class="field">
+          <label for="name">앱 이름</label>
+          <input class="input" id="name" maxlength="30" required>
+        </div>
+        <div class="field">
+          <label for="tagline">한 줄 소개</label>
+          <input class="input" id="tagline" maxlength="60" placeholder="예: 25분 집중, 5분 휴식. 뽀모도로 타이머" required>
+        </div>
+        <div class="field">
+          <label for="description">상세 설명</label>
+          <textarea class="textarea" id="description" placeholder="어떤 앱인지, 어떤 기능이 있는지 알려주세요." required></textarea>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="category">카테고리</label>
+            <select class="select" id="category"></select>
+          </div>
+          <div class="field">
+            <label for="price">가격 (P)</label>
+            <input class="input" id="price" type="number" min="0" max="100000" step="10" value="300" required>
+            <span class="hint">0P로 하면 무료로 등록돼요.</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="url">앱 주소</label>
+          <input class="input" id="url" type="url" placeholder="https://my-app.vercel.app" required>
+          <span class="hint">미리 써보기와 구매자의 [앱 열기]에 쓰여요. 구매 전에는 주소가 공개되지 않아요.</span>
+        </div>
+        <div class="field">
+          <label for="screenshot">스크린샷 주소 <span class="muted">(선택)</span></label>
+          <input class="input" id="screenshot" type="url" placeholder="https://.../screenshot.png">
+          <span class="hint">비워 두면 카테고리 아이콘이 보여요.</span>
+        </div>
+        <div class="field">
+          <label for="tool">만든 도구</label>
+          <input class="input" id="tool" maxlength="30" placeholder="예: Claude Code, Cursor" list="tools">
+          <datalist id="tools">
+            <option value="Claude Code"><option value="Cursor"><option value="Lovable"><option value="Bolt"><option value="v0">
+          </datalist>
+        </div>
+        <p class="form-error" id="sell-error"></p>
+        <button class="btn btn-primary btn-block" type="submit">등록하기</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/sell.js"></script>
+</body>
+</html>
