@@ -1,0 +1,12 @@
+# npm 패키지 (npm install로 언제든 복원 가능)
+node_modules/
+
+# 비밀 값 (DB 비밀번호, API 키)
+.env
+.env.*
+!.env.example
+
+# 로그와 운영체제가 만드는 파일
+npm-debug.log*
+Thumbs.db
+.DS_Store
