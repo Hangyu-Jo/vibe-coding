@@ -93,7 +93,7 @@ function bindEvents(app, owned) {
       const msg = app.price === 0
         ? `'${app.name}'을(를) 무료로 받을까요?`
         : `${formatPoints(app.price)}를 사용해 '${app.name}'을(를) 구매할까요?`;
-      if (!confirm(msg)) return;
+      if (!confirm(msg)) return;  //confirm은 window 객체에 적용 가능한 브라우저 제공 함수
 
       const result = purchaseApp(app.id);
       if (!result.ok) {
