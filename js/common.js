@@ -83,7 +83,7 @@ function signUp({ name, email, password }) {
   const user = {
     id: makeId("u"),
     name: name.trim(),
-    email,
+    email, //축약표현(키와 변수명이 같은 경우 사용)
     password,
     points: STARTING_POINTS,
   };
